@@ -1,0 +1,15 @@
+<h1>Olá sequelize!</h1>
+<a href="/users/create">Cadastrar!</a>
+
+<h1>Usuários:</h1>
+{{#each users}}
+  <p>{{this.name}}
+    -
+    {{this.occupation}}
+    -
+    {{#if this.newsletter}}
+      Se registrou na Newsletter.
+    {{else}}
+      Não se registrou na Newsletter.
+    {{/if}}</p>
+{{/each}}
