@@ -1,0 +1,22 @@
+<a href="/">Voltar</a>
+<h1>Editando: {{user.name}}</h1>
+<form action="/users/update" method="post">
+  <input type="hidden" name="id" value="{{user.id}}" />
+  <label for="name">Nome:</label>
+  <input
+    type="text"
+    name="name"
+    placeholder="Digite o nome do usuário"
+    value="{{user.name}}"
+  />
+  <label for="occupation">Profissão:</label>
+  <input
+    type="text"
+    name="occupation"
+    placeholder="Digite a profissão"
+    value="{{user.occupation}}"
+  />
+  <input type="checkbox" name="newsletter"  {{#if user.newsletter}}checked{{/if}} />
+  <label for="newsletter">Enviar promoções?</label>
+  <input type="submit" value="Editar" />
+</form>
