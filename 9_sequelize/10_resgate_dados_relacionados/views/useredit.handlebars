@@ -1,0 +1,37 @@
+<a href="/">Voltar</a>
+<h1>Editando: {{user.name}}</h1>
+<form action="/users/update" method="post">
+  <input type="hidden" name="id" value="{{user.id}}" />
+  <label for="name">Nome:</label>
+  <input
+    type="text"
+    name="name"
+    placeholder="Digite o nome do usuário"
+    value="{{user.name}}"
+  />
+  <label for="occupation">Profissão:</label>
+  <input
+    type="text"
+    name="occupation"
+    placeholder="Digite a profissão"
+    value="{{user.occupation}}"
+  />
+  <input type="checkbox" name="newsletter"  {{#if user.newsletter}}checked{{/if}} />
+  <label for="newsletter">Enviar promoções?</label>
+  <input type="submit" value="Editar" />
+</form>
+<h2>Endereços:</h2>
+<form action="/adress/create" method="post">
+  <input type="hidden" name="UserId" value="{{user.id}}">
+  <label for="street">Rua:</label>
+  <input type="text" name="street" placeholder="Digite a rua">
+  <label for="number">Número:</label>
+  <input type="text" name="number" placeholder="Digite o número">
+  <label for="city">Cidade:</label>
+  <input type="text" name="city" placeholder="Digite a cidade">
+  <input type="submit" value="Incluir endereço">
+</form>
+<h2>Lista de endereços:</h2>
+{{#each user.Addresses}}
+  <p> - {{this.street}} - {{this.number}} - {{this.city}}</p>
+{{/each}}
