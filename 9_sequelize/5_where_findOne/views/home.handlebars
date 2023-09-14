@@ -1,0 +1,7 @@
+<h1>Olá sequelize!</h1>
+<a href="/users/create">Cadastrar!</a>
+
+<h1>Usuários:</h1>
+{{#each users}}
+  <p>{{this.name}} - <a href="/users/{{this.id}}">Ver mais</a></p>
+{{/each}}
